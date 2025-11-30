@@ -1,0 +1,33 @@
+# Ignore virtual environments
+venv/
+env/
+knee_oa_env/
+.venv/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore test uploads (they are dynamic)
+static/tests/*.png
+static/tests/*.jpg
+static/tests/*.jpeg
+
+# Ignore logs
+*.log
+
+# Ignore git
+.git/
+.gitignore
+
+# Ignore documentation in docker
+README.md

@@ -30,11 +30,20 @@ verbose_name = {
 
 }
 
- 
+# Get the directory where app.py is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'knee.h5')
 
-model = load_model('knee.h5')
+# Load the model if it exists
+model = None
+if os.path.exists(MODEL_PATH):
+    model = load_model(MODEL_PATH)
+else:
+    print(f"Warning: Model file not found at {MODEL_PATH}. Please ensure knee.h5 is available.")
 
 def predict_label(img_path):
+	if model is None:
+		return "Model not loaded"
 	test_image = image.load_img(img_path, target_size=(224,224))
 	test_image = image.img_to_array(test_image)/255.0
 	test_image = test_image.reshape(1, 224,224,3)
@@ -92,5 +101,7 @@ def get_output():
  
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(host='0.0.0.0', port=port, debug=debug)
 

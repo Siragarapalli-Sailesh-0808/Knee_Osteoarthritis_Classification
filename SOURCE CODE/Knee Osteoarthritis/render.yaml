@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: knee-osteoarthritis-classifier
+    env: python
+    buildCommand: pip install -r requirements_deploy.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.10.13"
