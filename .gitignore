@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+knee_oa_env/
+venv/
+ENV/
+env/
+.venv
+
+# Model files (large files)
+*.h5
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.lnk
+
+# Flask
+instance/
+.webassets-cache
+
+# Test images
+static/tests/*.png
+static/tests/*.jpg
+static/tests/*.jpeg
+
+# Logs
+*.log
