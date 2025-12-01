@@ -1,8 +1,7 @@
-tensorflow==2.11.0
-Flask==2.0.1
-Werkzeug==2.2.2
-pillow==10.3.0
-protobuf==3.19.6
-gunicorn==20.1.0
-h5py==3.7.0
-numpy==1.23.5
+tensorflow-cpu==2.13.0
+Flask==2.3.0
+Werkzeug==2.3.0
+pillow==10.0.0
+gunicorn==21.2.0
+h5py==3.9.0
+numpy==1.24.3
