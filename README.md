@@ -100,3 +100,41 @@ http://127.0.0.1:5000
 ## Authors
 
 [Add author information here]
+
+## Deployment
+
+### Deploy to Render (Free Hosting)
+
+1. **Sign up at Render**: Go to [render.com](https://render.com) and sign up with your GitHub account
+
+2. **Create New Web Service**:
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository: `Knee_Osteoarthritis_Classification`
+   - Configure:
+     - **Name**: knee-osteoarthritis-classifier (or your choice)
+     - **Environment**: Python 3
+     - **Build Command**: `pip install -r requirements.txt`
+     - **Start Command**: `gunicorn wsgi:app`
+     - **Instance Type**: Free
+
+3. **Deploy**: Click "Create Web Service" and wait for deployment (5-10 minutes)
+
+4. **Get Your Live URL**: After deployment, you'll get a URL like: `https://knee-osteoarthritis-classifier.onrender.com`
+
+### Deploy to Railway (Alternative)
+
+1. Go to [railway.app](https://railway.app)
+2. Sign in with GitHub
+3. Click "New Project" → "Deploy from GitHub repo"
+4. Select `Knee_Osteoarthritis_Classification`
+5. Railway will auto-detect and deploy
+6. Get your live URL from the deployment
+
+### Deploy to Heroku (Alternative)
+
+1. Install Heroku CLI and login: `heroku login`
+2. Create new app: `heroku create knee-oa-classifier`
+3. Push to Heroku: `git push heroku main`
+4. Open app: `heroku open`
+
+**Note**: Make sure the `knee.h5` model file is available in the repository or uploaded separately for predictions to work.
