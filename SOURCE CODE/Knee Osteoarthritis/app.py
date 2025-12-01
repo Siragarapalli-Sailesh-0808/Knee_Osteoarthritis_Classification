@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 import os
-os.environ['TF_USE_LEGACY_KERAS'] = '1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 from flask import Flask, render_template, request
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.metrics import AUC
 import numpy as np
-from tensorflow.keras.utils import to_categorical
 import pickle
 
 
