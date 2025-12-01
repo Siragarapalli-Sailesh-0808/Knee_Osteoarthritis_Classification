@@ -12,8 +12,8 @@ ENV/
 env/
 .venv
 
-# Model files (large files)
-*.h5
+# Model files are now tracked with Git LFS
+# *.h5 - removed, using Git LFS instead
 
 # IDE
 .vscode/
